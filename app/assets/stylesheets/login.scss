@@ -1,0 +1,109 @@
+html{
+    font-size:14px;
+  }
+  .gb-container{
+    max-width:960px;
+  }
+  .gb-pricing-header{
+    max-width:700px;
+  }
+  .card-deck .card{
+    min-width:220px;
+  }
+  .gb-border-top{
+    border-top-width:1px;
+    border-top-style:solid;
+    border-top-color:rgb(229, 229, 229);
+  }
+  .gb-border-bottom{
+    border-bottom-width:1px;
+    border-bottom-style:solid;
+    border-bottom-color:rgb(229, 229, 229);
+  }
+  .gb-box-shadow{
+    box-shadow:rgba(0, 0, 0, 0.05) 0px 0.25rem 0.75rem;
+  }
+  .gb-section{
+    background-color:rgb(32, 32, 32);
+    color:rgb(255, 255, 255);
+    margin-top:-17px;
+    height:500px;
+    background-image:url("https://www.gridbox.io/projects/50709915-d419-4870-ac5c-51f80660543d/assets/img/pexels-photo-247676.jpeg");
+    background-size:cover;
+    background-position-x:0%;
+    background-position-y:100%;
+  }
+  .gb-container-1{
+    height:100%;
+    padding-top:80px;
+  }
+  .gb-container-2{
+    padding-bottom:24px;
+    padding-top:30px;
+  }
+  .gb-row{
+    margin-top:16px;
+    margin-bottom:10px;
+  }
+  .card img{
+    width:128px;
+    margin-left:auto;
+    margin-right:auto;
+    height:auto !important;
+  }
+  .gb-display-4{
+    letter-spacing:5px;
+    font-weight:400;
+    font-family:"Droid Sans", sans-serif;
+  }
+  .gb-btn{
+    border-top-left-radius:100px;
+    border-top-right-radius:100px;
+    border-bottom-right-radius:100px;
+    border-bottom-left-radius:100px;
+  }
+  .gb-div-block{
+    width:500px;
+    background-color:rgb(243, 243, 243);
+    padding-top:20px;
+    padding-right:20px;
+    padding-bottom:20px;
+    padding-left:20px;
+  }
+  .gb-col-sm-10{
+    text-align:center;
+    width:100%;
+  }
+  .gb-form-group{
+    width:100%;
+  }
+  .gb-container-3{
+    width:500px;
+    bottom:25px;
+  }
+  .gb-section-1{
+    background-color:rgb(14, 0, 0);
+    color:rgb(255, 255, 255);
+    height:350px;
+  }
+  .gb-col-12{
+    margin-bottom:5px;
+  }
+  @media (min-width: 768px){
+    html{
+      font-size:16px;
+    }
+  }
+  @media only screen and (max-width: 500px){
+    .gb-container-1{
+      padding-top:30px;
+    }
+    .gb-container-1 h1{
+      font-size:36px;
+      padding-bottom:5px;
+    }
+    .gb-container-3{
+      width:300px;
+    }
+  }
+  
