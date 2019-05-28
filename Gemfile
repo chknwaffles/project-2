@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
@@ -64,3 +65,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rest-client'
 gem 'json'
 gem 'argon2'
+
+#password gem
+gem 'bcrypt'
+#add gem for spotify api
+gem 'rspotify'
+
+
