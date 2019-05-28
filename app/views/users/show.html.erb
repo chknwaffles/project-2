@@ -1,7 +1,5 @@
 <h1> USER SHOW PAGE</h1>
 
-<%= button_to 'Logout', logout_path, method: :delete %>
-
 <p><%= @user.username %></p>
 
 <% if current_user == @user %>

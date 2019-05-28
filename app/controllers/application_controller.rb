@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user
+    helper_method :current_user, :logged_in?
 
     def authorize_spotify
         RSpotify.authenticate(ENV['CLIENT_ID'], ENV['SECRET_KEY'])
