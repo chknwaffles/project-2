@@ -23,12 +23,6 @@ class UsersController < ApplicationController
         #     redirect_to new_user_path
         # end
     end
-
-    def search
-        byebug
-        RSpotify::Artist.search(params[:search])
-        byebug
-    end
     
     def destroy
         @user = User.find(params[:id])
