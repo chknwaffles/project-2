@@ -2,5 +2,5 @@
 
 <h3>All Albums</h3>
 <% @artist.albums.each do |album| %>
-<%= album.name %>
+<%= link_to image_tag(album.image_url), artist_album_path(@artist, album) %>
 <% end %>
