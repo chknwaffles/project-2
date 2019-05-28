@@ -1,0 +1,9 @@
+<h1><%= @album.name %></h1>
+<%= image_tag @album.image_url %>
+
+<h3>Track List:</h3>
+
+<ol><% @album.songs.each do |song| %>
+<li><%= song.name %></li>
+<% end %>
+</ol>

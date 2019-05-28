@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :artists, only: [:index, :show] do
     resources :songs, only: [:show, :index]
-    resources :albums, only: [:show, :index]
+    resources :albums, only: [:show]
   end
 
   post '/search', to: 'artists#search_artist', as: 'search_artist'

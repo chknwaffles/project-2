@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_135408) do
 
   create_table "albums", force: :cascade do |t|
     t.string "name"
+    t.string "image_url"
     t.integer "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_135408) do
   create_table "songs", force: :cascade do |t|
     t.string "name"
     t.integer "artist_id"
+    t.integer "album_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
