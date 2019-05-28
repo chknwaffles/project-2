@@ -1,7 +1,7 @@
-class CreateCities < ActiveRecord::Migration[5.2]
+class CreateSongs < ActiveRecord::Migration[5.2]
   def change
-    create_table :cities do |t|
-
+    create_table :songs do |t|
+      t.integer :artist_id
       t.timestamps
     end
   end

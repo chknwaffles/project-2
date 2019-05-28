@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LandmarkTest < ActiveSupport::TestCase
+class SongTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
