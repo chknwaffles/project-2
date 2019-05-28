@@ -1,6 +1,10 @@
 <h1>Artist <%= @artist.name %></h1>
 
-<h3>All Albums</h3>
+<h5>All Songs</h5>
+<%= button_to "All Songs by #{@artist.name}", artist_songs_path(@artist), method: :get %>
+
+<h5>All Albums</h5>
 <% @artist.albums.each do |album| %>
 <%= link_to image_tag(album.image_url), artist_album_path(@artist, album) %>
 <% end %>
+
