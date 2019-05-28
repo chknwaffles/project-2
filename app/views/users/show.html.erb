@@ -1,12 +1,5 @@
 <h1> USER SHOW PAGE</h1>
 
-<h4>Search for Artists</h4>
-<%=form_tag search_path, method: :post do %>
-<%=text_field_tag(:search, params[:search])%>
-<%=submit_tag "Search"%>
-<%end%>
-
-
 <%= button_to 'Logout', logout_path, method: :delete %>
 
 <p><%= @user.username %></p>
