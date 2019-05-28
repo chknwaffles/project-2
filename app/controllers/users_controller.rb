@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     include UsersHelper
 
     def show
+        # byebug
         @user = User.find(params[:id])
     end
     
@@ -22,6 +23,12 @@ class UsersController < ApplicationController
         #     redirect_to new_user_path
         # end
     end
+
+    def search
+        byebug
+        RSpotify::Artist.search(params[:search])
+        byebug
+    end
     
     def destroy
         @user = User.find(params[:id])
@@ -29,4 +36,5 @@ class UsersController < ApplicationController
         flash[:notice] = 'You deleted your account!'
         redirect_to new_user_path
     end
+
 end
