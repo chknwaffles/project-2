@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :ratings
     # validates :password, length: {minimum: 6}
     has_secure_password
     # def password
