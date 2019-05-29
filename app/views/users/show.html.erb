@@ -5,7 +5,9 @@
   <% if !@user.ratings.empty? %>
     <p>All User ratings:</p>
       <% @user.ratings.each do |rating| %>
-        <%= link_to rating.song.name, artist_song_path(rating.song.artist, rating.song) %> - <%= rating.stars %>/10 <br>
+        <%= link_to rating.song.name, artist_song_path(rating.song.artist, rating.song) %> - <%= rating.stars %>/10
+         <%# button_to "Delete Rating", delete_rating_path, method: :delete  %>
+        <br>
       <% end %>
     <% end %>
 </body>

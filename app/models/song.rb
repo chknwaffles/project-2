@@ -16,5 +16,10 @@ class Song < ApplicationRecord
     def music_url
         song = RSpotify::Track.find(self.spotify_id)
         song.preview_url
+
+        # if song.preview_url == nil
+        #     song = RSpotify::Track.search(self.name, market: 'US')
+        #     song.preview_url
+        # end
     end
 end
