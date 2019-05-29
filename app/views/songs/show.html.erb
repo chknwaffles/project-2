@@ -9,8 +9,8 @@
             <%= f.submit @rating.stars ? "Edit Rating" : "Rate Song" %>
         <% end %>
     <% end %>
-    <% if song.music_url %>
-        <audio src=<%= song.music_url %> controls>
+    <% if @song.music_url %>
+        <audio src=<%= @song.music_url %> controls>
         </audio>
     <% end %>
     <%= button_to "Back to Album Page", artist_album_path(@song.artist, @song.album), method: :get %>
