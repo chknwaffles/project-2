@@ -18,9 +18,6 @@
 	margin-right:2%;
 }
 
-#song-btn {
-	width: 50%;
-}
 
 .artist-name {
 	float: right;
@@ -28,3 +25,34 @@
 	display: inline;
 	z-index: -1;
 }
+
+.rating {
+	float: left;
+	clear: both;
+	display: block;
+	margin-top: 10%;
+	position: absolute;
+	margin-left: 2.5%;
+}
+
+.all-songs{
+	float: left;
+	clear: both;
+	display: block;
+	margin-top: 20%;
+	position: absolute;
+	margin-left: 2.5%;
+}
+
+.song-btn {
+	width: 250%;
+	position: absolute;
+	margin-left: 0;
+	z-index: -1;
+}
+
+/*#song-btn {
+	margin-top: 25%;
+	position: absolute;
+	margin-left: 0px;
+}*/
