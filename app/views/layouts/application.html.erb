@@ -18,7 +18,7 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">App Name</a>
+      <a class="navbar-brand" href="#">mRDB</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -33,8 +33,9 @@
 <!--           </a>
  --><!--           <a class="nav-item nav-link" href="#">
  -->        <% if logged_in?%> 
-            <%=link_to "Logout", logout_path, method: :delete, :class => 'nav-thing'%>
             <%=link_to "Profile", user_path(current_user), method: :get, :class => 'nav-thing'%>
+            <%=link_to "Logout", logout_path, method: :delete, :class => 'nav-thing'%>
+            
 
             <%else%>
             <%=link_to "Login", login_path, method: :get, :class => 'nav-thing'%>
