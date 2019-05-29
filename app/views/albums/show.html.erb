@@ -4,6 +4,8 @@
 <h3>Track List:</h3>
 
 <ol><% @album.songs.each do |song| %>
-<li><%= link_to song.name, artist_song_path(@album.artist, song) %></li>
-<% end %>
+    <li><%= link_to song.name, artist_song_path(@album.artist, song) %></li>
+    <audio src=<%= song.music_url %> controls>
+    </audio>
+    <% end %>
 </ol>
