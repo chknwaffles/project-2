@@ -24,21 +24,23 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">
-            <%if !logged_in?%>
-            <%=link_to "Signup", controller: 'users', action: 'new', method: :get%>
+<!--           <a class="nav-item nav-link" href="#">
+ -->        <%if !logged_in?%>
+            <%=link_to "Signup", controller: 'users', action: 'new', method: :get, :class => 'nav-thing'%>
             <%else%>
-            <%=link_to "Home", index_path, method: :get%>
+            <%=link_to "Home", index_path, method: :get, :class => 'nav-thing'%>
             <%end%>
-          </a>
-          <a class="nav-item nav-link" href="#">
-            <% if logged_in?%> 
-            <%=link_to "Logout", logout_path, method: :delete%>
+<!--           </a>
+ --><!--           <a class="nav-item nav-link" href="#">
+ -->        <% if logged_in?%> 
+            <%=link_to "Logout", logout_path, method: :delete, :class => 'nav-thing'%>
+            <%=link_to "Profile", user_path(current_user), method: :get, :class => 'nav-thing'%>
+
             <%else%>
-            <%=link_to "Login", login_path, method: :get%>
+            <%=link_to "Login", login_path, method: :get, :class => 'nav-thing'%>
             <%end%>
-          </a>
-      
+<!--           </a>
+ -->      
         </div>
     </div>
 </nav>

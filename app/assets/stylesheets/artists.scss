@@ -1,0 +1,30 @@
+.alb-img {
+	float: right;
+	display: block;
+	height: 400px;
+	clear: both;
+	margin-right: 10%;
+}
+
+.alb {
+	padding: 0.5em;
+	height: 300px;
+	width:auto;
+}
+
+.album-grid {
+	margin-top: 25%;
+	margin-left:2%;
+	margin-right:2%;
+}
+
+#song-btn {
+	width: 50%;
+}
+
+.artist-name {
+	float: right;
+	margin-right: 10%;
+	display: inline;
+	z-index: -1;
+}
