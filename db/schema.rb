@@ -16,19 +16,22 @@ ActiveRecord::Schema.define(version: 2019_05_28_135408) do
     t.string "name"
     t.string "image_url"
     t.integer "artist_id"
+    t.string "spotify_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.string "spotify_hash"
+    t.string "spotify_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "ratings", force: :cascade do |t|
+    t.integer "stars"
     t.integer "song_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_135408) do
     t.string "name"
     t.integer "artist_id"
     t.integer "album_id"
+    t.string "spotify_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

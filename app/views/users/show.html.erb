@@ -1,6 +1,16 @@
 <h1> USER SHOW PAGE</h1>
 
-<p><%= @user.username %></p>
+
+
+<body>
+  <p><%= @user.username %></p>
+  <% if !@user.ratings.empty? %>
+    <p>All User ratings:</p>
+      <% @user.ratings.each do |rating| %>
+        <%= link_to rating.song, artist_song_path(rating.song.artist, rating.song) %> - <%= rating.stars %>/10
+      <% end %>
+    <% end %>
+</body>
 
 <% if current_user == @user %>
   <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'are u sure lol' } %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/', to: 'application#index', as: 'index'
+  post '/ratings', to: 'songs#post_rating', as: 'post_rating'
 
   resources :users, only: [:show, :new, :create, :destroy]
 
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
     resources :songs, only: [:show, :index]
     resources :albums, only: [:show]
   end
-
+  
   post '/search', to: 'artists#search_artist', as: 'search_artist'
 
   #login/logout routes
