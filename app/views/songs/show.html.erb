@@ -1,0 +1,15 @@
+<h1><%= @song.name %></h1>
+<h3>by <%= @song.artist.name %></h3>
+<body>
+    <% if current_user %>
+        <% if current_user.ratings.length > 0 %>
+            <% current_user.ratings.each do |rating| %>
+                <%= form_for @rating, url: '/ratings' do |f| %>
+                    <%= f.hidden_field :song_id, value: @song.id%>
+                    <%= f.select :stars, (0..10), selected: rating.stars if rating.song_id == @song.id %>
+                    <%= f.submit "Rate Song" %>
+                <% end %>
+            <% end %>
+        <% end %>
+    <% end %>
+</body>

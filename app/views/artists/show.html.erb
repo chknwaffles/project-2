@@ -1,5 +1,9 @@
 <h1>Artist <%= @artist.name %></h1>
 
+<% if !@artist.ratings.empty? %>
+    <h2>Average Rating: <%= @artist.avg_rating %></h2>
+<% end %>
+
 <h5>All Songs</h5>
 <%= button_to "All Songs by #{@artist.name}", artist_songs_path(@artist), method: :get %>
 

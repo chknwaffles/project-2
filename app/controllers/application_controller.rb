@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
     def index
         authorize_spotify
     end
+
     # def authorized
     #     #check if user has access
     # end
