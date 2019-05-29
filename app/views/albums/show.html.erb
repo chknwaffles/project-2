@@ -5,7 +5,10 @@
 
 <ol><% @album.songs.each do |song| %>
     <li><%= link_to song.name, artist_song_path(@album.artist, song) %></li>
-    <audio src=<%= song.music_url %> controls>
-    </audio>
+    <% if song.music_url %>
+        <audio src=<%= song.music_url %> controls>
+        </audio>
     <% end %>
-</ol>
+<% end %></ol>
+
+<%= button_to "Back to Artist", artist_path(@album.artist), method: :get %>
