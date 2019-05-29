@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/', to: 'application#index', as: 'index'
   post '/ratings', to: 'songs#post_rating', as: 'post_rating'
+  patch '/ratings', to: 'songs#edit_rating', as: 'edit_rating'
 
   resources :users, only: [:show, :new, :create, :destroy]
 

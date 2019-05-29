@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
     def index
         authorize_spotify
         @songs = Song.top_rated_songs
+        @albums = Album.top_rated_albums
     end
 
     # def authorized

@@ -10,5 +10,6 @@
         <% end %>
     <% end %>
 
-    <%= button_to "Back to Song Index", artist_songs_path(@song.artist), method: :get %>
+    <%=button_to "Album View", artist_album_path(@song.artist, @song.album), method: :get%>
+    <%= button_to "View Song Index", artist_songs_path(@song.artist), method: :get %>
 </body>
