@@ -1,6 +1,6 @@
 
 <%if logged_in? %>
-    <div class="title"><h4>Music Rating Database</h4></div>
+    <h4 class="title">Music Rating Database</h4>
     <%=form_tag search_artist_path, method: :post do %>
         <%=text_field_tag(:search, params[:search])%>
         <%=submit_tag "Search Artist"%>
