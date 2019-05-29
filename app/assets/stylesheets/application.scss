@@ -17,7 +17,7 @@
  @import "bootstrap";
 
  body {
- 	font-family: 'Helvetica Neue';
+	font-family: 'Nanum Gothic', sans-serif;
  	font-weight: thin;
  	background: #2d2a2b;
  	color: white;
@@ -31,5 +31,27 @@ form {
 }
 
 .navbar {
-	color: #23897c;
-}
+  background-color:teal !important;
+  background-image: none;
+  background-repeat: no-repeat;
+ }
+
+ .navbar-brand {
+ 	color: white !important;
+ }
+
+ .navbar-toggler {
+ 	border: none;
+ }
+
+ .navbar-toggler-icon {
+ 	color: white !important;
+ }
+
+ a {
+ 	color: white;
+ }
+
+ a:hover {
+ 	color: #d5e2ea;
+ }
