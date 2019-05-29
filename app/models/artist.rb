@@ -8,7 +8,8 @@ class Artist < ApplicationRecord
             new_album = Album.find_or_create_by(name: album.name)
             new_album.update(image_url: album.images[1]["url"], artist_id: self.id, spotify_id: album.id)
             album.tracks.each do |track|
-                Song.find_or_create_by(name: track.name, artist_id: self.id, album_id: new_album.id, spotify_id: track.id)
+                new_song = Song.find_or_create_by(name: track.name)
+                new_song.update(artist_id: self.id, album_id: new_album.id, spotify_id: track.id)
             end
         end
     end
