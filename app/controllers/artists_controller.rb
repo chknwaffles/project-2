@@ -7,7 +7,7 @@ class ArtistsController < ApplicationController
     def create
     	@artist = Artist.find_or_create_by(name: params[:name], spotify_id: params[:spotify_id])
    		spotify_artist = RSpotify::Artist.find(@artist.spotify_id)
-   		if !spotify_artist.images.nil?
+   		if !spotify_artist.images.empty? 
    			@artist.update(image_url: spotify_artist.images[1]["url"])
    			byebug
    		end

@@ -1,10 +1,16 @@
 <h1 class="artist-name"><%= @artist.name %></h1>
 
+
+<% if @artist.image_url %>
 <div class="img">
-	<% byebug %>
     <%= image_tag @artist.image_url, :class => 'alb-img'%>
 </div>
 
+<%else %>
+<div class="no-img">
+	No Image Available.
+</div>
+<%end%>
 <% if !@artist.ratings.empty? %>
     <h4 class="rating">Average Rating: <%= @artist.avg_rating %></h4>
 <% end %>

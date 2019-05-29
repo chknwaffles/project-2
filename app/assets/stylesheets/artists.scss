@@ -6,6 +6,16 @@
 	margin-right: 10%;
 }
 
+.no-img {
+	float: right;
+	display: block;
+	height: 400px;
+	width: 400px;
+	clear: both;
+	margin-right: 10%;
+	background-color: grey;
+}
+
 .alb {
 	padding: 0.5em;
 	height: 300px;
@@ -50,6 +60,8 @@
 	margin-left: 0;
 	z-index: -1;
 }
+
+
 
 /*#song-btn {
 	margin-top: 25%;
