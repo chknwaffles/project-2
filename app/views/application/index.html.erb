@@ -1,16 +1,20 @@
 
 <%if logged_in? %>
-<h1>Homepage</h1>
-
-<h4>Search for Artists</h4>
-<%=form_tag search_artist_path, method: :post do %>
-<%=text_field_tag(:search, params[:search])%>
-<%=submit_tag "Search Artist"%>
-<%end%>
-
+    <h4>Search for Artists</h4>
+    <%=form_tag search_artist_path, method: :post do %>
+        <%=text_field_tag(:search, params[:search])%>
+        <%=submit_tag "Search Artist"%>
+    <%end%>
 
 <%else%>
-<h1>Welcome!</h1>
+    <h1>Welcome!</h1>
 <%end%>
+
+<h5>Top Rated Songs: </h5>
+<% @songs.each do |song| %>
+<%# song.name %>
+<%= link_to image_tag(song.album.image_url), artist_song_path(song.artist, song) %>
+<% end %>
+
 
 

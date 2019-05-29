@@ -1,13 +1,11 @@
 <h1> USER SHOW PAGE</h1>
 
-
-
 <body>
   <p><%= @user.username %></p>
   <% if !@user.ratings.empty? %>
     <p>All User ratings:</p>
       <% @user.ratings.each do |rating| %>
-        <%= link_to rating.song, artist_song_path(rating.song.artist, rating.song) %> - <%= rating.stars %>/10
+        <%= link_to rating.song.name, artist_song_path(rating.song.artist, rating.song) %> - <%= rating.stars %>/10 <br>
       <% end %>
     <% end %>
 </body>
