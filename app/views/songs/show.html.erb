@@ -7,7 +7,7 @@
                 <%= form_for @rating, url: '/ratings' do |f| %>
                     <%= f.hidden_field :song_id, value: @song.id%>
                     <%= f.select :stars, (0..10), selected: rating.stars if rating.song_id == @song.id %>
-                    <%= f.submit "Rate Song" %>
+                    <%= f.submit if rating.song_id == @song.id ? "Edit Rating" : "Rate Song" %>
                 <% end %>
             <% end %>
         <% end %>
