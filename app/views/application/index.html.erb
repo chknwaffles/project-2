@@ -14,7 +14,7 @@
 
 <h5>Top Rated Albums: </h5>
 <% @albums.each do |album| %>
-<%=link_to image_tag(album.album_url), artist_album_path(album.artist, album)%>
+<%=link_to image_tag(album.image_url), artist_album_path(album.artist, album)%>
 <%end%>
 <%else%>
     <h1>Welcome!</h1>
