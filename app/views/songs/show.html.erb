@@ -1,5 +1,11 @@
 <h1><%= @song.name %></h1>
 <h3>by <%= @song.artist.name %></h3>
+
+<% if @song.music_url %>
+        <audio src=<%= @song.music_url %> controls>
+        </audio>
+<% end %>
+
 <h5>Average Rating: <%= @song.average_rating %></h5>
 <body>
     <% if current_user %>
@@ -9,10 +15,7 @@
             <%= f.submit @rating.stars ? "Edit Rating" : "Rate Song" %>
         <% end %>
     <% end %>
-    <% if @song.music_url %>
-        <audio src=<%= @song.music_url %> controls>
-        </audio>
-    <% end %>
+    
     <%= button_to "Back to Album Page", artist_album_path(@song.artist, @song.album), method: :get %>
     <%= button_to "Back to Song Index", artist_songs_path(@song.artist), method: :get %>
 </body>
