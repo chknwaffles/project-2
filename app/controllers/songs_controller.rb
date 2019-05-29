@@ -23,6 +23,14 @@ class SongsController < ApplicationController
         redirect_to artist_song_path(@song.artist.id, @song)
     end
 
+    def edit_rating
+        @song = Song.find(params[:rating][:song_id])
+        @rating = Rating.find_by(song_id: @song.id)
+        @rating.update(stars: params[:rating][:stars])
+        redirect_to artist_song_path(@song.artist.id, @song)
+
+    end
+
     def song_search(id)
         RSpotify::Track.find(id)
     end

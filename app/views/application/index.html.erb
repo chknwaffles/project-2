@@ -6,15 +6,19 @@
         <%=submit_tag "Search Artist"%>
     <%end%>
 
-<%else%>
-    <h1>Welcome!</h1>
-<%end%>
-
 <h5>Top Rated Songs: </h5>
 <% @songs.each do |song| %>
 <%# song.name %>
 <%= link_to image_tag(song.album.image_url), artist_song_path(song.artist, song) %>
 <% end %>
+
+<h5>Top Rated Albums: </h5>
+<% @albums.each do |album| %>
+<%=link_to image_tag(album.album_url), artist_album_path(album.artist, album)%>
+<%end%>
+<%else%>
+    <h1>Welcome!</h1>
+<%end%>
 
 
 
