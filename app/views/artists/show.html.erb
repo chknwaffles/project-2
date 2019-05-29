@@ -3,6 +3,7 @@
 <div class="img">
     <%= image_tag @artist.image_url %>
 </div>
+
 <% if !@artist.ratings.empty? %>
     <h2>Average Rating: <%= @artist.avg_rating %></h2>
 <% end %>

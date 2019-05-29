@@ -1,15 +1,14 @@
 <h1><%= @song.name %></h1>
 <h3>by <%= @song.artist.name %></h3>
+<h5>Average Rating: <%= @song.average_rating %></h5>
 <body>
     <% if current_user %>
-        <% if current_user.ratings.length > 0 %>
-            <% current_user.ratings.each do |rating| %>
-                <%= form_for @rating, url: '/ratings' do |f| %>
-                    <%= f.hidden_field :song_id, value: @song.id%>
-                    <%= f.select :stars, (0..10), selected: rating.stars if rating.song_id == @song.id %>
-                    <%= f.submit if rating.song_id == @song.id ? "Edit Rating" : "Rate Song" %>
-                <% end %>
-            <% end %>
+        <%= form_for @rating, url: '/ratings' do |f| %>
+            <%= f.hidden_field :song_id, value: @song.id%>
+            <%= f.select :stars, (0..10), selected: @rating.stars %>
+            <%= f.submit @rating.stars ? "Edit Rating" : "Rate Song" %>
         <% end %>
     <% end %>
+
+    <%= button_to "Back to Song Index", artist_songs_path(@song.artist), method: :get %>
 </body>

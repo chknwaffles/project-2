@@ -14,10 +14,13 @@ class Artist < ApplicationRecord
     end
 
     def avg_rating
-        self.songs.map do |song|
-            if song.average_rating
-                song.average_rating
+        total_rating = 0.0
+        self.songs.each do |song|
+            if !song.average_rating.nan?
+                total_rating += song.average_rating
             end
-        end.reduce(:+).to_f / self.ratings.length.to_f
+        end
+
+        total_rating / self.ratings.length.to_f
     end
 end
