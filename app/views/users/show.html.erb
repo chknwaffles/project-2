@@ -15,3 +15,6 @@
 <% if current_user == @user %>
   <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'are u sure lol' } %>
 <% end %>
+
+<%=button_to "Start Searching for Artists", '/', method: :get%>
+ 

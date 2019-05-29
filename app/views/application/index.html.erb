@@ -1,3 +1,5 @@
+
+<%if logged_in? %>
 <h1>Homepage</h1>
 
 <h4>Search for Artists</h4>
@@ -5,3 +7,10 @@
 <%=text_field_tag(:search, params[:search])%>
 <%=submit_tag "Search Artist"%>
 <%end%>
+
+
+<%else%>
+<h1>Welcome!</h1>
+<%end%>
+
+
