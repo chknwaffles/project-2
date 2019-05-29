@@ -15,3 +15,21 @@
  */
 
  @import "bootstrap";
+
+ body {
+ 	font-family: 'Helvetica Neue';
+ 	font-weight: thin;
+ 	background: #2d2a2b;
+ 	color: white;
+ }
+
+form {
+
+	margin-left:25%;
+	margin-right:25%;
+	display: grid;
+}
+
+.navbar {
+	color: #23897c;
+}
