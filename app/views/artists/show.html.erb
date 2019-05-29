@@ -5,14 +5,17 @@
 </div>
 
 <% if !@artist.ratings.empty? %>
-    <h2 class="rating">Average Rating: <%= @artist.avg_rating %></h2>
+    <h4 class="rating">Average Rating: <%= @artist.avg_rating %></h4>
 <% end %>
 
-<h2 class="all-songs">All Songs</h2>
-<%= button_to "All Songs by #{@artist.name}", artist_songs_path(@artist), method: :get, :id => 'song-btn' %>
+
+<div class="all-songs">
+<h4>All Songs</h4>
+<%= button_to "All Songs by #{@artist.name}", artist_songs_path(@artist), method: :get, :class => 'song-btn' %>
+</div>
 
 <div class="album-grid">
-<h5>All Albums</h5>
+<h4>All Albums</h4>
 <% @artist.albums.each do |album| %>
 <%= link_to image_tag(album.image_url, :class => 'alb'), artist_album_path(@artist, album) %><% end %>
 </div>
