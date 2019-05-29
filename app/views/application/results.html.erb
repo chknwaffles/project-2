@@ -1,0 +1,4 @@
+
+<%@artist_hash.each do |artist|%>
+	<li><%=link_to artist.name, new_artist_path(name: artist.name, spotify_id: artist.id), method: :post%></li>
+	<%end%>

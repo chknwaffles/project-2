@@ -9,8 +9,11 @@ Rails.application.routes.draw do
     resources :songs, only: [:show, :index]
     resources :albums, only: [:show]
   end
+
+  post '/artist', to: 'artists#create', as: 'new_artist'
   
   post '/search', to: 'artists#search_artist', as: 'search_artist'
+  get '/results', to: 'application#results', as: 'results'
 
   #login/logout routes
   get '/login', to: 'sessions#login', as: 'login'

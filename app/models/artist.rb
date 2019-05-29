@@ -4,6 +4,7 @@ class Artist < ApplicationRecord
     has_many :ratings, through: :songs
 
     def create_all(artist_hash)
+        byebug
         artist_hash.albums.each do |album|
             new_album = Album.find_or_create_by(name: album.name)
             new_album.update(image_url: album.images[1]["url"], artist_id: self.id, spotify_id: album.id)
