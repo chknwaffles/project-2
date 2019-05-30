@@ -11,17 +11,26 @@
     
     <h5 class="title">Top Rated Songs: </h5>
         <div class='top-rated'>
-        <% @songs.each do |song| %>
-            <%= link_to image_tag(song.album.image_url), artist_song_path(song.artist, song), :class => 'foo' %>
-            <p class="song-name">song.name</p>
-        <% end %>
+            <% @songs.each do |song| %>
+                <%= link_to artist_song_path(song.artist, song), class: 'rated-item' do %>
+                    <%= image_tag(song.album.image_url) %>
+                    <span class='text-wrapper'>
+                        <span class='top-rated-item'><%= song.name %></span>
+                    </span>
+                <% end %>
+            <% end %>
         </div>
     <br><br>
     <h5 class="title"> Top Rated Albums: </h5>
         <div class='top-rated'>
-        <% @albums.each do |album| %>
-            <%=link_to image_tag(album.image_url), artist_album_path(album.artist, album) %>
-        <%end%> 
+            <% @albums.each do |album| %>
+                <%=link_to artist_album_path(album.artist, album), class: 'rated-item' do %>
+                    <%= image_tag(album.image_url) %>
+                    <span class='text-wrapper'>
+                        <span class='top-rated-item'><%= album.name %></span>
+                    </span>
+                <% end %>
+            <%end%> 
         </div>
 <%else%>
     <h1>Welcome!</h1>
