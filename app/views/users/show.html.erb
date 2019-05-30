@@ -1,18 +1,24 @@
 
-  <p class="user-name"><%= @user.username %></p>
+  <h1 class="user-name"><%= @user.username %></h1><br>
+  <%=button_to "Start Searching for Artists", '/', method: :get, :class => 'artist-search'%><br>
   <% if !@user.ratings.empty? %>
-    <p>All User ratings:</p>
+    <h5 class="r">All User ratings:</h5><br>
       <% @user.ratings.each do |rating| %>
-        <%= link_to rating.song.name, artist_song_path(rating.song.artist, rating.song) %> - <%= rating.stars %>/10
+        <p><%= link_to rating.song.name, artist_song_path(rating.song.artist, rating.song), :class => 'rated-song' %> - <%= rating.stars %>/10 <%= button_to "Delete Rating", delete_rating_path(id: rating.id), method: :delete, :class => 'delete-rating' %></p><br>
 
-         <%= button_to "Delete Rating", delete_rating_path(id: rating.id), method: :delete  %>
+         
         <br>
       <% end %>
+      <br>
+      <br>
+      <%else%>
+        <h5 class="r">You haven't rated songs yet!</h5><br>
+
     <% end %>
 
 <% if current_user == @user %>
-  <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'are u sure lol' } %>
+  <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'are u sure lol' }, :class => 'delete-account' %>
 <% end %>
 
-<%=button_to "Start Searching for Artists", '/', method: :get%>
+
  

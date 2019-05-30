@@ -2,4 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.user-name {
+	font-weight: bold;
+}
 
+.user-name:hover {
+	color: #d5e2ea;
+}
+
+.r {
+	font-weight: bold;
+}
+
+.rated-song {
+	margin-left: 5%;
+}
+
+.delete-rating {
+	width: 30%;
+	margin-left: 5%;
+	padding: 0px;
+	margin: 0px;
+	display: inline;
+}
+
+.delete-rating:hover {
+	background-color: #d5e2ea;
+
+}
+
+input.delete-account {
+	margin-right: 5px;
+
+}
+
+.delete-account:hover {
+	background-color: #d5e2ea;
+}
+
+.artist-search:hover {
+	background-color: #d5e2ea;
+}
