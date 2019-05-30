@@ -8,10 +8,12 @@
     <%end%>
 
     <br><br>
+    
     <h5 class="title">Top Rated Songs: </h5>
         <div class='top-rated'>
         <% @songs.each do |song| %>
-            <%= link_to image_tag(song.album.image_url), artist_song_path(song.artist, song) %>
+            <%= link_to image_tag(song.album.image_url), artist_song_path(song.artist, song), :class => 'foo' %>
+            <p class="song-name">song.name</p>
         <% end %>
         </div>
     <br><br>
