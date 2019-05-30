@@ -2,6 +2,14 @@ class Album < ApplicationRecord
     belongs_to :artist
     has_many :songs
 
+    def load_songs
+        new_album = RSpotify::Album.find(self.spotify_id)
+        new_album.tracks.each do |track|
+            new_song = Song.find_or_create_by(name: track.name, spotify_id: track.id)
+            new_song.update(artist_id: self.artist.id, album_id: self.id)
+        end
+    end
+
     def album_rating
         rated_songs = self.songs.select {|song| song.average_rating if !song.average_rating.nan? }
         rated_songs.map {|song| song.average_rating }.reduce(:+).to_f / rated_songs.length.to_f

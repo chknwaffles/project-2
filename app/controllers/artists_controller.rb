@@ -11,7 +11,7 @@ class ArtistsController < ApplicationController
    			@artist.update(image_url: spotify_artist.images[1]["url"])
    		end
 
-   		@artist.create_all(spotify_artist)
+   		@artist.load_albums(spotify_artist)
    		redirect_to artist_path(@artist)
     end
 
