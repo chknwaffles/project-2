@@ -14,21 +14,17 @@
 	font-weight: bold;
 }
 
-.rated-song {
-	margin-left: 5%;
-}
-
-.delete-rating {
-	width: 30%;
-	margin-left: 5%;
-	padding: 0px;
-	margin: 0px;
-	display: inline;
-}
-
 .delete-rating:hover {
 	background-color: #d5e2ea;
 
+}
+
+.rated {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-flow: row;
+	max-width: 950px;
 }
 
 input.delete-account {
