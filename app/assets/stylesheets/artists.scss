@@ -17,15 +17,17 @@
 }
 
 .alb {
-	padding: 0.5em;
 	height: 300px;
 	width:auto;
+  	border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 .album-grid {
+	margin: 0 auto;
 	margin-top: 33%;
-	margin-left:2%;
-	margin-right:2%;
+	
+
+
 }
 
 
@@ -36,7 +38,7 @@
 	z-index: -1;
 }
 
-.rating {
+/*.rating {
 	float: left;
 	clear: both;
 	display: block;
@@ -46,6 +48,24 @@
 }
 
 .all-songs{
+	float: left;
+	clear: both;
+	display: block;
+	margin-top: 20%;
+	position: absolute;
+	margin-left: 2.5%;
+}*/
+
+.all-songs {
+	float: left;
+	clear: both;
+	display: block;
+	margin-top: 10%;
+	position: absolute;
+	margin-left: 2.5%;
+}
+
+.rating {
 	float: left;
 	clear: both;
 	display: block;

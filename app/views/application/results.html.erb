@@ -1,3 +1,9 @@
+<h4 class="title">Music Rating Database</h4>
+    <%=form_tag search_artist_path, method: :post do %>
+        <%=text_field_tag(:search, params[:search])%>
+        <%=submit_tag "Search Artist"%>
+    <%end%>
+
 
 <%@artist_hash.each do |artist|%>
 	<li><%=link_to artist.name, new_artist_path(name: artist.name, spotify_id: artist.id), method: :post%></li>

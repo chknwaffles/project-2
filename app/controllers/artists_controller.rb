@@ -9,7 +9,6 @@ class ArtistsController < ApplicationController
    		spotify_artist = RSpotify::Artist.find(@artist.spotify_id)
    		if !spotify_artist.images.empty? 
    			@artist.update(image_url: spotify_artist.images[1]["url"])
-   			byebug
    		end
 
    		@artist.create_all(spotify_artist)
