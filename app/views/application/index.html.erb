@@ -1,21 +1,26 @@
 
 <%if logged_in? %>
+    <br>
     <h4 class="title">Music Rating Database</h4>
     <%=form_tag search_artist_path, method: :post do %>
         <%=text_field_tag(:search, params[:search])%>
         <%=submit_tag "Search Artist"%>
     <%end%>
 
-<h5>Top Rated Songs: </h5>
-<% @songs.each do |song| %>
-<%# song.name %>
-<%= link_to image_tag(song.album.image_url), artist_song_path(song.artist, song) %>
-<% end %>
-<br><br>
-<h5>Top Rated Albums: </h5>
-<% @albums.each do |album| %>
-<%=link_to image_tag(album.image_url), artist_album_path(album.artist, album)%>
-<%end%>
+    <br><br>
+    <h5 class="title">Top Rated Songs: </h5>
+        <div class='top-rated'>
+        <% @songs.each do |song| %>
+            <%= link_to image_tag(song.album.image_url), artist_song_path(song.artist, song) %>
+        <% end %>
+        </div>
+    <br><br>
+    <h5 class="title"> Top Rated Albums: </h5>
+        <div class='top-rated'>
+        <% @albums.each do |album| %>
+            <%=link_to image_tag(album.image_url), artist_album_path(album.artist, album) %>
+        <%end%> 
+        </div>
 <%else%>
     <h1>Welcome!</h1>
 <%end%>
