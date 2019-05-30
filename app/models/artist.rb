@@ -28,4 +28,6 @@ class Artist < ApplicationRecord
 
         total_rating / self.ratings.length.to_f
     end
+
+    
 end
