@@ -23,11 +23,11 @@
 }
 
 .album-grid {
-	margin-top: 33%;
-	margin-left: 3%;
-	margin-right: 3%;
+	display: block;
+	margin: auto;
 	width: 100%;
-
+	text-align: center;
+	margin-top: 35%;
 }
 
 
@@ -76,7 +76,7 @@
 }
 
 .song-btn {
-	width: 250%;
+	width: auto;
 	position: absolute;
 	margin-left: 0;
 }

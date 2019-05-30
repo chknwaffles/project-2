@@ -1,13 +1,21 @@
-<h1><%= @song.name %></h1>
+<h1 class="song-name"><%= @song.name %></h1>
+<br>
 <h3>by <%= @song.artist.name %></h3>
 
+
+<div class="audio">
 <% if @song.music_url %>
         <audio src=<%= @song.music_url %> controls>
         </audio>
 <% end %>
+</div>
 
 <h5>Average Rating: <%= @song.average_rating %></h5>
-<body>
+<br>
+
+<div class="rate-form">
+    Rate Song:
+
     <% if current_user %>
         <%= form_for @rating, url: '/ratings' do |f| %>
             <%= f.hidden_field :song_id, value: @song.id%>
@@ -15,7 +23,11 @@
             <%= f.submit @rating.stars ? "Edit Rating" : "Rate Song" %>
         <% end %>
     <% end %>
+
+    <br>
+
     
     <%= button_to "Back to Album Page", artist_album_path(@song.artist, @song.album), method: :get %>
+    <br>
     <%= button_to "Back to Song Index", artist_songs_path(@song.artist), method: :get %>
-</body>
+</div>
