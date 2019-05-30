@@ -3,14 +3,18 @@ class Artist < ApplicationRecord
     has_many :albums
     has_many :ratings, through: :songs
 
-    def create_all(artist_hash)
+    def load_albums(artist_hash)
         artist_hash.albums.each do |album|
-            new_album = Album.find_or_create_by(name: album.name)
-            new_album.update(image_url: album.images[1]["url"], artist_id: self.id, spotify_id: album.id)
-            album.tracks.each do |track|
-                new_song = Song.find_or_create_by(name: track.name)
-                new_song.update(artist_id: self.id, album_id: new_album.id, spotify_id: track.id)
+            if album.available_markets.include?('US')
+                new_album = Album.find_or_create_by(name: album.name)
+                new_album.update(image_url: album.images[1]["url"], artist_id: self.id, spotify_id: album.id)
             end
+        end
+    end
+
+    def load_all_songs
+        Album.all.each do |album|
+            album.load_songs
         end
     end
 

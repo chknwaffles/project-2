@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
     def index
         @artist = Artist.find(params[:artist_id])
-        
+        @artist.load_all_songs
     end
 
     def show
@@ -9,11 +9,6 @@ class SongsController < ApplicationController
         @song_array = song_search(@song.spotify_id)
 
         @rating = Rating.exists?(song_id: @song.id) ? Rating.find_by(song_id: @song.id) : Rating.new
-        # if Rating.exists?(song_id: @song.id)
-        #     @rating = Rating.find_by(song_id: @song.id)
-        # else
-        #     @rating = Rating.new
-        # end
     end
 
     def post_rating
