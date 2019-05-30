@@ -23,6 +23,13 @@ class UsersController < ApplicationController
         #     redirect_to new_user_path
         # end
     end
+
+    def delete_rating
+        @rating = Rating.find(params[:id])
+        @user = User.find(@rating.user_id)
+        @rating.delete
+        redirect_to user_path(@user)
+    end
     
     def destroy
         @user = User.find(params[:id])
