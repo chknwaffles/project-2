@@ -11,7 +11,7 @@ class Album < ApplicationRecord
     end
 
     def album_rating
-        rated_songs = self.songs.select {|song| song.average_rating if !song.average_rating.nan? }
+        rated_songs = self.songs.select {|song| song.average_rating if !song.ratings.empty? }
         rated_songs.map {|song| song.average_rating }.reduce(:+).to_f / rated_songs.length.to_f
     end
 
