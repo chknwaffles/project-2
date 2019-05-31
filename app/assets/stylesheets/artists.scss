@@ -1,44 +1,63 @@
-.alb-img {
-	float: right;
-	display: block;
+.artist-show {
+	display: flex;
+	//justify-content: space-between;
+	flex-direction: flex-start;
+	width: 1300px;
+	height: 1400px;
+	margin: 0 auto;
+}
+
+.artist-show-title {
+	align-content: flex-end;
+	margin-left: auto;
+	margin-right: 45px;
+}
+
+.img {
 	height: 400px;
-	clear: both;
-	margin-right: 10%;
+	//float: right;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: 60px;
+}
+.alb-img {
+	height: 400px;
 }
 
 .no-img {
-	float: right;
-	display: block;
 	height: 400px;
-	width: 400px;
-	clear: both;
-	margin-right: 10%;
+	//float: right;
+	margin-top: 70px;
+	margin-left: auto;
+	margin-right: 45px;
 	background-color: grey;
 }
 
 .alb {
 	height: 300px;
 	width:auto;
-  	border: 2px solid rgba(0, 0, 0, 0.2);
+	margin: 0;
 }
 
 .album-grid {
-	display: block;
-	margin: auto;
-	width: 100%;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	width: 1300px;
+	position: absolute;
 	text-align: center;
 	margin-top: 35%;
 }
 
-
-.artist-name {
-	float: right;
-	margin-right: 10%;
-	display: inline;
-	z-index: -1;
-	font-weight: bold;
+.inside-album-grid {
+	display: inline-block;
+	font-size: 0;
+	padding-right: 25px;
 }
 
+.album-header {
+	text-align: center;
+	width: auto;
+}
 /*.rating {
 	float: left;
 	clear: both;
@@ -60,7 +79,8 @@
 .all-songs {
 	float: left;
 	clear: both;
-	display: block;
+	display: flex;
+	flex-wrap: wrap;
 	margin-top: 10%;
 	position: absolute;
 	margin-left: 2.5%;
@@ -84,7 +104,6 @@
 .song-btn:hover {
 	background-color: #d5e2ea;
 }
-
 
 
 /*#song-btn {
