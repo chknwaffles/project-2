@@ -72,7 +72,7 @@ a:hover {
 .top-rated {
 	display: flex;
 	flex-wrap: wrap;
-	margin: auto;
+	margin: 0 auto;
 	width: 90%;
 	text-align: center;
 }
@@ -108,6 +108,12 @@ a:hover {
 	font-size: 0.85em;
 }
 
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	width: 1202px;
+	margin: 0 auto;
+}
 
 
  

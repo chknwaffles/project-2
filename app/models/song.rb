@@ -4,16 +4,12 @@ class Song < ApplicationRecord
     has_many :ratings
 
     def average_rating
-        if !self.ratings.empty?
-            self.ratings.map {|rating| rating.stars }.reduce(:+).to_f / self.ratings.length.to_f
-        else
-            Float::NAN
-        end
+        self.ratings.map {|rating| rating.stars }.reduce(:+).to_f / self.ratings.length.to_f
     end
 
     def self.top_rated_songs
         Song.all.select do |song|
-            song.average_rating if !song.average_rating.nan?
+            song.average_rating if !song.ratings.empty?
         end.sort_by {|song| song.average_rating }.reverse
     end
 

@@ -5,8 +5,7 @@
     <h5 class="r">All User ratings:</h5><br>
       <% @user.ratings.each do |rating| %>
         <div class='rated'><%= link_to "#{rating.song.name} - #{rating.stars}/10", artist_song_path(rating.song.artist, rating.song)%> <%= button_to "Delete Rating", delete_rating_path(id: rating.id), method: :delete %></div><br>
-
-      <% end %>
+  <% end %>
       <br>
       <br>
       <%else%>
