@@ -18,6 +18,6 @@ class Album < ApplicationRecord
     def self.top_rated_albums
         self.all.select do |album|
             album.album_rating if !album.album_rating.nan?
-        end.sort_by {|album| album.album_rating }.reverse
+        end.sort_by {|album| album.album_rating }.reverse.first(8)
     end
 end

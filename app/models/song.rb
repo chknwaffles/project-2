@@ -10,7 +10,7 @@ class Song < ApplicationRecord
     def self.top_rated_songs
         Song.all.select do |song|
             song.average_rating if !song.ratings.empty?
-        end.sort_by {|song| song.average_rating }.reverse
+        end.sort_by {|song| song.average_rating }.reverse.first(8)
     end
 
     def music_url
