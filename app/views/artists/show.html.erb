@@ -23,8 +23,10 @@
 
     <div class="album-grid">
         <h4 class='album-header'>All Albums</h4>
-        <% @artist.albums.each do |album| %>
-            <%= link_to image_tag(album.image_url, :class => 'alb'), artist_album_path(@artist, album) %>
-        <% end %>
+        <div class='inside-album-grid'>
+            <% @artist.albums.each do |album| %>
+                <%= link_to image_tag(album.image_url, :class => 'alb'), artist_album_path(@artist, album) %>
+            <% end %>
+        </div>
     </div>
 </div>

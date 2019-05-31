@@ -18,11 +18,10 @@
 	//float: right;
 	margin-top: 10px;
 	margin-left: auto;
-	margin-right: 45px;
+	margin-right: 60px;
 }
 .alb-img {
 	height: 400px;
-	padding: 0;
 }
 
 .no-img {
@@ -49,6 +48,11 @@
 	margin-top: 35%;
 }
 
+.inside-album-grid {
+	display: inline-block;
+	font-size: 0;
+	padding-right: 25px;
+}
 
 .album-header {
 	text-align: center;
@@ -100,6 +104,7 @@
 .song-btn:hover {
 	background-color: #d5e2ea;
 }
+
 
 /*#song-btn {
 	margin-top: 25%;
